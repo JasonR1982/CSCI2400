@@ -1,0 +1,15 @@
+This is bomb 1218.
+
+It belongs to jaev6153 (jason.evarts@colorado.edu)
+
+I started gdb and immediately set a break point for explode_bomb and phase_1.  I stepped through phase 1 and read what was stored in rsi until I found a string that said "There she stook in the doorway, I heard the mission bell
+
+To complete the second phase, I started by entering six numbers, which satisfied the read_six_numbers function.  Then I realized the code wanted 1 for the first number through inspection and it need a pattern that doubled the current numberfor the next number.
+
+To complete phase 3 I saw that the scanf function wanted two numbers due to the string that was fed to esi before the call.  I choose 4 and it happened to work out that it passed into the function.  I then did the math down the function to see that I would need -30 for the function to work out to be equal to pass the last explode bomb.
+
+A quick inspection of the phase 4 code indicates that it would also like 2 numbers as input.  The first number needs to be below 0x2e(48) to clear the Jump Below or Equal bomb trigger at 0x4010c8. I had to guess until fun4 was satisfied, but I knew the second number had to be 15 due to the compare and jump equal at 0x4010e6.
+
+Inspection showed that Phase 5 wanted 3 numbers.  Entering 3 random numbers and then letting the code run until it came to 0x401146 allowed me to discover that with 13 as my first number, it will expect 12 as my second and 126 as my third.
+
+Phase 6 includes the read_six_numbers at the beginning, so I input 6 numbers.si
